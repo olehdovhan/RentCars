@@ -1,24 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RentCars" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lNd-oZ-sYd">
+                                <rect key="frame" x="93.5" y="64" width="227" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="Dos-Lm-hf1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="227" id="aLl-bb-jsn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Te-1V-ri9">
+                                <rect key="frame" x="86" y="105.5" width="242" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Wt8-F7-swP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="242" id="n4c-L2-sf5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="24"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skoda fabia" translatesAutoresizingMaskIntoConstraints="NO" id="rS8-Ia-uD4">
+                                <rect key="frame" x="20" y="198.5" width="374" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="F6A-g7-gEN"/>
+                                    <constraint firstAttribute="height" constant="250" id="bCT-fm-BDy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last time started:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8z-cV-olT">
+                                <rect key="frame" x="20" y="466.5" width="374" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Vqy-wT-J1b"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="dKP-5a-hlC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of trips:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9f-kY-9LT">
+                                <rect key="frame" x="19.5" y="496.5" width="375" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="DJu-mr-Fu9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="sH7-T0-KcZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: X / 10.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ar2-JK-3ZO">
+                                <rect key="frame" x="250" y="466.5" width="144" height="18"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PMq-e8-7Rf">
+                                <rect key="frame" x="19.5" y="553.5" width="375" height="32"/>
+                                <segments>
+                                    <segment title="Skoda Fabia"/>
+                                    <segment title="Audi TT"/>
+                                    <segment title="Porsche 911"/>
+                                    <segment title="Bmw M3"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JQ-yb-5Bl">
+                                <rect key="frame" x="40" y="780" width="112" height="42"/>
+                                <color key="backgroundColor" red="0.7803921568627451" green="0.37509502496141683" blue="0.44238574225022786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="A1f-nW-JcV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="112" id="L69-Ki-Ojz"/>
+                                </constraints>
+                                <state key="normal" title="Start trip">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jik-8b-2Vv">
+                                <rect key="frame" x="262" y="780" width="112" height="42"/>
+                                <color key="backgroundColor" red="0.78039215689999997" green="0.37509502500000003" blue="0.4423857423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="7aO-3A-vJg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="112" id="uVG-bC-ITj"/>
+                                </constraints>
+                                <state key="normal" title="Rate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rS8-Ia-uD4" firstAttribute="top" secondItem="1Te-1V-ri9" secondAttribute="bottom" constant="50" id="6F7-ja-23i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jik-8b-2Vv" secondAttribute="trailing" constant="40" id="8OE-lc-rJQ"/>
+                            <constraint firstItem="0JQ-yb-5Bl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="AVm-CQ-Dwv"/>
+                            <constraint firstItem="w9f-kY-9LT" firstAttribute="top" secondItem="a8z-cV-olT" secondAttribute="bottom" constant="8" id="AfJ-kG-RbD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jik-8b-2Vv" secondAttribute="bottom" constant="40" id="BbQ-GP-CvJ"/>
+                            <constraint firstItem="lNd-oZ-sYd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="CGY-K7-tYl"/>
+                            <constraint firstItem="PMq-e8-7Rf" firstAttribute="top" secondItem="w9f-kY-9LT" secondAttribute="bottom" constant="35" id="FYF-Ub-w2V"/>
+                            <constraint firstItem="1Te-1V-ri9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FcA-w2-jdX"/>
+                            <constraint firstItem="rS8-Ia-uD4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fq0-St-Zl6"/>
+                            <constraint firstItem="ar2-JK-3ZO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="250" id="FvM-3s-CJD"/>
+                            <constraint firstItem="Jik-8b-2Vv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0JQ-yb-5Bl" secondAttribute="trailing" constant="8" symbolic="YES" id="Hao-aa-EHC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0JQ-yb-5Bl" secondAttribute="bottom" constant="40" id="MkW-Le-xUY"/>
+                            <constraint firstItem="PMq-e8-7Rf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Otd-ZE-fli"/>
+                            <constraint firstItem="ar2-JK-3ZO" firstAttribute="trailing" secondItem="rS8-Ia-uD4" secondAttribute="trailing" id="PvC-Ks-8t2"/>
+                            <constraint firstItem="w9f-kY-9LT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T8Y-gL-ePe"/>
+                            <constraint firstItem="a8z-cV-olT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aRG-r4-Ak7"/>
+                            <constraint firstItem="ar2-JK-3ZO" firstAttribute="top" secondItem="rS8-Ia-uD4" secondAttribute="bottom" constant="18" id="ct3-8C-NWK"/>
+                            <constraint firstItem="1Te-1V-ri9" firstAttribute="top" secondItem="lNd-oZ-sYd" secondAttribute="bottom" constant="8.5" id="imA-vj-Pab"/>
+                            <constraint firstItem="a8z-cV-olT" firstAttribute="top" secondItem="rS8-Ia-uD4" secondAttribute="bottom" constant="18" id="lHb-aE-VV3"/>
+                            <constraint firstItem="PMq-e8-7Rf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="w9f-kY-9LT" secondAttribute="leading" id="pX0-f4-4a8"/>
+                            <constraint firstItem="lNd-oZ-sYd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qvF-KS-gRT"/>
+                            <constraint firstItem="PMq-e8-7Rf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="w9f-kY-9LT" secondAttribute="trailing" id="xrj-UT-8cV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="71.651785714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="skoda fabia" width="1000" height="1000"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
