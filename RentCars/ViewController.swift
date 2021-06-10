@@ -6,10 +6,10 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
-
-  
+  var context: NSManagedObjectContext!
   @IBOutlet var markLabel: UILabel!
   
   @IBOutlet var modelLabel: UILabel!

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>mark</key>
+		<string>Skoda</string>
+		<key>model</key>
+		<string>Fabia</string>
+		<key>imageName</key>
+		<string>skodaFabia.png</string>
+		<key>lastStarted</key>
+		<date>2021-06-10T10:29:47Z</date>
+		<key>timesDriven</key>
+		<integer>997</integer>
+		<key>rating</key>
+		<integer>7</integer>
+	</dict>
+	<dict>
+		<key>mark</key>
+		<string>Audi</string>
+		<key>model</key>
+		<string>TT</string>
+		<key>imageName</key>
+		<string>audiTT.png</string>
+		<key>lastStarted</key>
+		<date>2021-06-10T10:32:55Z</date>
+		<key>timesDriven</key>
+		<integer>4</integer>
+		<key>rating</key>
+		<integer>10</integer>
+	</dict>
+	<dict>
+		<key>mark</key>
+		<string>BMW</string>
+		<key>model</key>
+		<string>M3</string>
+		<key>imageName</key>
+		<string>bmwM3.png</string>
+		<key>lastStarted</key>
+		<date>2021-06-10T10:36:18Z</date>
+		<key>timesDriven</key>
+		<integer>120</integer>
+		<key>rating</key>
+		<integer>8</integer>
+	</dict>
+	<dict>
+		<key>mark</key>
+		<string>Porsche</string>
+		<key>model</key>
+		<string>911</string>
+		<key>imageName</key>
+		<string>porsche911.png</string>
+		<key>lastStarted</key>
+		<date>2021-06-10T10:38:39Z</date>
+		<key>timesDriven</key>
+		<integer>26</integer>
+		<key>rating</key>
+		<integer>10</integer>
+	</dict>
+</array>
+</plist>
