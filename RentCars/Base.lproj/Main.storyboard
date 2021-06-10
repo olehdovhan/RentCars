@@ -77,6 +77,9 @@
                                     <segment title="Porsche 911"/>
                                     <segment title="Bmw M3"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="diI-AB-xTj"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JQ-yb-5Bl">
                                 <rect key="frame" x="40" y="780" width="112" height="42"/>
@@ -88,6 +91,9 @@
                                 <state key="normal" title="Start trip">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="startTripPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zHR-pw-zpX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jik-8b-2Vv">
                                 <rect key="frame" x="262" y="780" width="112" height="42"/>
@@ -99,6 +105,9 @@
                                 <state key="normal" title="Rate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="ratePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="380-fF-b2d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -128,6 +137,15 @@
                             <constraint firstItem="PMq-e8-7Rf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="w9f-kY-9LT" secondAttribute="trailing" id="xrj-UT-8cV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carImageView" destination="rS8-Ia-uD4" id="H6Q-xV-Sel"/>
+                        <outlet property="lastTimeStartedLabel" destination="a8z-cV-olT" id="nGm-Ui-yjR"/>
+                        <outlet property="markLabel" destination="lNd-oZ-sYd" id="8SC-xA-6LG"/>
+                        <outlet property="modelLabel" destination="1Te-1V-ri9" id="7hm-RG-X95"/>
+                        <outlet property="numberOfTripsLabel" destination="w9f-kY-9LT" id="GY6-Yc-ncx"/>
+                        <outlet property="ratingLabel" destination="ar2-JK-3ZO" id="aWn-2i-stV"/>
+                        <outlet property="segmentedControl" destination="PMq-e8-7Rf" id="XW1-y9-oZK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
