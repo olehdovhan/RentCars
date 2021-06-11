@@ -43,7 +43,6 @@ class ViewController: UIViewController {
     } catch let error as NSError {
       print(error.localizedDescription)
     }
-    
   }
   
   @IBAction func ratePressed(_ sender: UIButton) {
@@ -65,15 +64,14 @@ class ViewController: UIViewController {
   }
   
   private func update(rating: Double) {
-  
-    car.rating = rating
+    car.rating = max(min(10,rating),0)
     do {
       try context.save()
       insertDataFrom(selectedCar: car)
     } catch let error as NSError {
       let alertController = UIAlertController(title: "Wrong value", message: "Wrong input", preferredStyle: .alert)
       let okAction = UIAlertAction(title: "OK", style: .default)
-      
+
       alertController.addAction(okAction)
       present(alertController, animated: true)
       print(error.localizedDescription)
@@ -126,7 +124,6 @@ class ViewController: UIViewController {
       let image = UIImage(named: imageName!)
       let imageData = image!.pngData()
       car.imageData = imageData
-      
     }
   }
   
@@ -142,14 +139,10 @@ class ViewController: UIViewController {
     } catch let error as NSError {
       print(error.localizedDescription)
     }
-    
   }
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()
   }
-  
-  
 }
 
