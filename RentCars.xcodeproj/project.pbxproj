@@ -48,8 +48,6 @@
 		0C052D6F26713ACF007B3175 = {
 			isa = PBXGroup;
 			children = (
-				0C052DAD26732AEC007B3175 /* RentedCar+CoreDataClass.swift */,
-				0C052DAE26732AEC007B3175 /* RentedCar+CoreDataProperties.swift */,
 				0C052D7A26713ACF007B3175 /* RentCars */,
 				0C052D7926713ACF007B3175 /* Products */,
 			);
@@ -75,6 +73,8 @@
 				0C052D8C26713AD0007B3175 /* Info.plist */,
 				0C052D9B26721779007B3175 /* data.plist */,
 				0C052D8426713ACF007B3175 /* RentCars.xcdatamodeld */,
+				0C052DAD26732AEC007B3175 /* RentedCar+CoreDataClass.swift */,
+				0C052DAE26732AEC007B3175 /* RentedCar+CoreDataProperties.swift */,
 			);
 			path = RentCars;
 			sourceTree = "<group>";

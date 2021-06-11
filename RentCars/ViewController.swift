@@ -10,7 +10,7 @@ import CoreData
 
 class ViewController: UIViewController {
   lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.newBackgroundContext()
-  
+  var car: RentedCar!
   lazy var dateFormatter: DateFormatter = {
     let df = DateFormatter()
     df.dateStyle = .short
@@ -23,18 +23,64 @@ class ViewController: UIViewController {
   @IBOutlet var lastTimeStartedLabel: UILabel!
   @IBOutlet var numberOfTripsLabel: UILabel!
   @IBOutlet var ratingLabel: UILabel!
-  @IBOutlet var segmentedControl: UISegmentedControl!
+  @IBOutlet var segmentedControl: UISegmentedControl! {
+    didSet {
+      getDataFromFile()
+      updateSegmentedControl()
+    }
+  }
   @IBAction func segmentedControlPressed(_ sender: UISegmentedControl) {
-    
     updateSegmentedControl()
-    
   }
   
   @IBAction func startTripPressed(_ sender: UIButton) {
+    car.timesDriven += 1
+    car.lastStarted = Date()
+    
+    do {
+      try context.save()
+      insertDataFrom(selectedCar: car)
+    } catch let error as NSError {
+      print(error.localizedDescription)
+    }
+    
   }
   
   @IBAction func ratePressed(_ sender: UIButton) {
+    let alertController = UIAlertController(title: "Rate it", message: "Rate this car please", preferredStyle: .alert)
+    let rateAction = UIAlertAction(title: "Rate", style: .default) { action in
+      if let text = alertController.textFields?.first?.text {
+        self.update(rating: (text as NSString).doubleValue)
+      }
+    }
+    let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+    alertController.addTextField { textField in
+      textField.keyboardType = .numberPad
+    }
+    alertController.addAction(rateAction)
+    alertController.addAction(cancelAction)
+    
+   present(alertController, animated: true, completion: nil)
+    
   }
+  
+  private func update(rating: Double) {
+  
+    car.rating = rating
+    do {
+      try context.save()
+      insertDataFrom(selectedCar: car)
+    } catch let error as NSError {
+      let alertController = UIAlertController(title: "Wrong value", message: "Wrong input", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "OK", style: .default)
+      
+      alertController.addAction(okAction)
+      present(alertController, animated: true)
+      print(error.localizedDescription)
+    }
+    
+  }
+  
   
   private func insertDataFrom(selectedCar car: RentedCar) {
     carImageView.image = UIImage(data: car.imageData!)
@@ -91,7 +137,7 @@ class ViewController: UIViewController {
     
     do {
       let results = try context.fetch(fetchRequest)
-      let car = results.first
+      car = results.first
       insertDataFrom(selectedCar: car!)
     } catch let error as NSError {
       print(error.localizedDescription)
@@ -102,8 +148,6 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    getDataFromFile()
-//    updateSegmentedControl()
   }
   
   
