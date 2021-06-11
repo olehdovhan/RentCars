@@ -54,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of trips:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9f-kY-9LT">
-                                <rect key="frame" x="19.5" y="496.5" width="375" height="22"/>
+                                <rect key="frame" x="20" y="496.5" width="374" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="DJu-mr-Fu9"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="sH7-T0-KcZ"/>
@@ -70,12 +70,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PMq-e8-7Rf">
-                                <rect key="frame" x="19.5" y="553.5" width="375" height="32"/>
+                                <rect key="frame" x="20" y="553.5" width="374" height="32"/>
                                 <segments>
-                                    <segment title="Skoda Fabia"/>
-                                    <segment title="Audi TT"/>
-                                    <segment title="Porsche 911"/>
-                                    <segment title="Bmw M3"/>
+                                    <segment title="Skoda"/>
+                                    <segment title="Audi"/>
+                                    <segment title="Porsche"/>
+                                    <segment title="BMW"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentedControlPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="diI-AB-xTj"/>

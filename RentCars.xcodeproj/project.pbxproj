@@ -15,6 +15,8 @@
 		0C052D8826713AD0007B3175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C052D8726713AD0007B3175 /* Assets.xcassets */; };
 		0C052D8B26713AD0007B3175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C052D8926713AD0007B3175 /* LaunchScreen.storyboard */; };
 		0C052D9C26721779007B3175 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C052D9B26721779007B3175 /* data.plist */; };
+		0C052DAF26732AEC007B3175 /* RentedCar+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C052DAD26732AEC007B3175 /* RentedCar+CoreDataClass.swift */; };
+		0C052DB026732AEC007B3175 /* RentedCar+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C052DAE26732AEC007B3175 /* RentedCar+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0C052D8A26713AD0007B3175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C052D8C26713AD0007B3175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C052D9B26721779007B3175 /* data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		0C052DAD26732AEC007B3175 /* RentedCar+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RentedCar+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0C052DAE26732AEC007B3175 /* RentedCar+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RentedCar+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,8 @@
 		0C052D6F26713ACF007B3175 = {
 			isa = PBXGroup;
 			children = (
+				0C052DAD26732AEC007B3175 /* RentedCar+CoreDataClass.swift */,
+				0C052DAE26732AEC007B3175 /* RentedCar+CoreDataProperties.swift */,
 				0C052D7A26713ACF007B3175 /* RentCars */,
 				0C052D7926713ACF007B3175 /* Products */,
 			);
@@ -144,10 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C052DB026732AEC007B3175 /* RentedCar+CoreDataProperties.swift in Sources */,
 				0C052D8026713ACF007B3175 /* ViewController.swift in Sources */,
 				0C052D7C26713ACF007B3175 /* AppDelegate.swift in Sources */,
 				0C052D7E26713ACF007B3175 /* SceneDelegate.swift in Sources */,
 				0C052D8626713ACF007B3175 /* RentCars.xcdatamodeld in Sources */,
+				0C052DAF26732AEC007B3175 /* RentedCar+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

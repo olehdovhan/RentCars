@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Car" representedClassName="Car" syncable="YES" codeGenerationType="class">
+    <entity name="RentedCar" representedClassName="RentedCar" syncable="YES">
         <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="lastStarted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="mark" optional="YES" attributeType="String"/>
@@ -9,6 +9,6 @@
         <attribute name="timesDriven" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Car" positionX="-54" positionY="-9" width="128" height="119"/>
+        <element name="RentedCar" positionX="-54" positionY="-9" width="128" height="119"/>
     </elements>
 </model>
