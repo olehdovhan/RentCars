@@ -29,6 +29,7 @@ class ViewController: UIViewController {
       updateSegmentedControl()
     }
   }
+  
   @IBAction func segmentedControlPressed(_ sender: UISegmentedControl) {
     updateSegmentedControl()
   }
@@ -36,7 +37,6 @@ class ViewController: UIViewController {
   @IBAction func startTripPressed(_ sender: UIButton) {
     car.timesDriven += 1
     car.lastStarted = Date()
-    
     do {
       try context.save()
       insertDataFrom(selectedCar: car)
@@ -46,21 +46,23 @@ class ViewController: UIViewController {
   }
   
   @IBAction func ratePressed(_ sender: UIButton) {
-    let alertController = UIAlertController(title: "Rate it", message: "Rate this car please", preferredStyle: .alert)
-    let rateAction = UIAlertAction(title: "Rate", style: .default) { action in
-      if let text = alertController.textFields?.first?.text {
-        self.update(rating: (text as NSString).doubleValue)
-      }
+    let alertController = UIAlertController(title: "Rate it",
+                                            message: "Rate this car please",
+                                            preferredStyle: .alert)
+    let rateAction = UIAlertAction(title: "Rate",
+                                   style: .default) { action in
+      guard let text = alertController.textFields?.first?.text else { return }
+      self.update(rating: (text as NSString).doubleValue)
     }
-    let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-    alertController.addTextField { textField in
-      textField.keyboardType = .numberPad
+    let cancelAction = UIAlertAction(title: "Cancel",
+                                     style: .default)
+    alertController.addTextField { textField in textField.keyboardType = .numberPad
     }
     alertController.addAction(rateAction)
     alertController.addAction(cancelAction)
-    
-   present(alertController, animated: true, completion: nil)
-    
+    present(alertController,
+            animated: true,
+            completion: nil)
   }
   
   private func update(rating: Double) {
@@ -69,16 +71,16 @@ class ViewController: UIViewController {
       try context.save()
       insertDataFrom(selectedCar: car)
     } catch let error as NSError {
-      let alertController = UIAlertController(title: "Wrong value", message: "Wrong input", preferredStyle: .alert)
-      let okAction = UIAlertAction(title: "OK", style: .default)
-
+      let alertController = UIAlertController(title: "Wrong value",
+                                              message: "Wrong input",
+                                              preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "OK",
+                                   style: .default)
       alertController.addAction(okAction)
       present(alertController, animated: true)
       print(error.localizedDescription)
     }
-    
   }
-  
   
   private func insertDataFrom(selectedCar car: RentedCar) {
     carImageView.image = UIImage(data: car.imageData!)
@@ -86,52 +88,45 @@ class ViewController: UIViewController {
     modelLabel.text = car.model
     ratingLabel.text = "Rating: \(car.rating) / 10"
     numberOfTripsLabel.text = "Number of trips: \(car.timesDriven)"
-    
     lastTimeStartedLabel.text = "Last time started: \(dateFormatter.string(from: car.lastStarted!))"
   }
   
   private func getDataFromFile() {
     let fetchRequest: NSFetchRequest<RentedCar> = RentedCar.fetchRequest()
     fetchRequest.predicate = NSPredicate(format: "mark != nil")
-    
     var records = 0
-    
     do {
       records = try context.count(for: fetchRequest)
       print("Is Data there already?")
     } catch let error as NSError {
       print(error.localizedDescription)
     }
-    
     guard records == 0 else { return }
-    
-    
-    guard let pathToFile = Bundle.main.path(forResource: "data", ofType: "plist"),
+    guard let pathToFile = Bundle.main.path(forResource: "data",
+                                            ofType: "plist"),
           let dataArray = NSArray(contentsOfFile: pathToFile) else { return }
-    
     for dictionary in dataArray {
-      let entity = NSEntityDescription.entity(forEntityName: "RentedCar", in: context)
-      let car = NSManagedObject(entity: entity!, insertInto: context) as! RentedCar
-      
+      guard let entity = NSEntityDescription.entity(forEntityName: "RentedCar",
+                                                    in: context) else { return }
+      car = NSManagedObject(entity: entity,
+                            insertInto: context) as? RentedCar
       let carDictionary = dictionary as! [String : AnyObject]
       car.mark = carDictionary["mark"] as? String
       car.model = carDictionary["model"] as? String
       car.rating = carDictionary["rating"] as! Double
       car.lastStarted = carDictionary["lastStarted"] as? Date
       car.timesDriven = carDictionary["timesDriven"] as! Int16
-      
-      let imageName = carDictionary["imageName"] as? String
-      let image = UIImage(named: imageName!)
-      let imageData = image!.pngData()
-      car.imageData = imageData
+      guard let imageName = carDictionary["imageName"] as? String else { return }
+      guard let image = UIImage(named: imageName) else { return }
+      let imageData = image.pngData()
+      car.imageData = imageData 
     }
   }
   
   private func updateSegmentedControl() {
     let fetchRequest: NSFetchRequest<RentedCar> = RentedCar.fetchRequest()
-    let mark = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)
-    fetchRequest.predicate = NSPredicate(format: "mark == %@", mark!)
-    
+    guard let mark = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex) else { return }
+    fetchRequest.predicate = NSPredicate(format: "mark == %@", mark)
     do {
       let results = try context.fetch(fetchRequest)
       car = results.first
@@ -145,4 +140,3 @@ class ViewController: UIViewController {
     super.viewDidLoad()
   }
 }
-
