@@ -72,11 +72,19 @@
 				0C052D8926713AD0007B3175 /* LaunchScreen.storyboard */,
 				0C052D8C26713AD0007B3175 /* Info.plist */,
 				0C052D9B26721779007B3175 /* data.plist */,
+				0C052DB12674A1E4007B3175 /* DataBase */,
+			);
+			path = RentCars;
+			sourceTree = "<group>";
+		};
+		0C052DB12674A1E4007B3175 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
 				0C052D8426713ACF007B3175 /* RentCars.xcdatamodeld */,
 				0C052DAD26732AEC007B3175 /* RentedCar+CoreDataClass.swift */,
 				0C052DAE26732AEC007B3175 /* RentedCar+CoreDataProperties.swift */,
 			);
-			path = RentCars;
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

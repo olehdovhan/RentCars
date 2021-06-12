@@ -83,12 +83,17 @@ class ViewController: UIViewController {
   }
   
   private func insertDataFrom(selectedCar car: RentedCar) {
-    carImageView.image = UIImage(data: car.imageData!)
+    let dummyImage = UIImage(named: "dummyImage")!
+    carImageView.image = UIImage(data: car.imageData!) ?? dummyImage
     markLabel.text = car.mark
     modelLabel.text = car.model
     ratingLabel.text = "Rating: \(car.rating) / 10"
     numberOfTripsLabel.text = "Number of trips: \(car.timesDriven)"
-    lastTimeStartedLabel.text = "Last time started: \(dateFormatter.string(from: car.lastStarted!))"
+    var dateString = "You never rent this car"
+    if let lastStartedDate = car.lastStarted {
+      dateString = dateFormatter.string(from: lastStartedDate)
+    }
+    lastTimeStartedLabel.text = "Last time started: \(dateString)"
   }
   
   private func getDataFromFile() {
@@ -110,7 +115,7 @@ class ViewController: UIViewController {
                                                     in: context) else { return }
       car = NSManagedObject(entity: entity,
                             insertInto: context) as? RentedCar
-      let carDictionary = dictionary as! [String : AnyObject]
+      let carDictionary = dictionary as! [String: AnyObject]
       car.mark = carDictionary["mark"] as? String
       car.model = carDictionary["model"] as? String
       car.rating = carDictionary["rating"] as! Double
